@@ -1,0 +1,1 @@
+print([[(b+a)//2 for a,b in zip(x[:-1],x[1:]) if b-a!=1][0] for x in [list(sorted(int(l.replace('F','0').replace('B','1').replace('L','0').replace('R','1'),2)for l in open('input.txt').readlines()))]][0])
