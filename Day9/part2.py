@@ -1,0 +1,1 @@
+print([min(n[b['l']:b['h']])+max(n[b['l']:b['h']])for n in[[int(l)for l in open('input.txt')]]for x in[[n[k]for k in range(25,len(n))if not any(n[i]+n[j]==n[k]for j in range(k-25,k)for i in range(k-25,j))][0]]for b in[{'l':0,'h':1}]*(2*len(n))for s in[sum(n[b['l']:b['h']])]if(True if s==x else b.update({'l':b['l']+1})if s>x else b.update({'h':b['h']+1}))][0])
