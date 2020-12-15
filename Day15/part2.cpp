@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <map>
+#include <unordered_map>
 using namespace std;
 
 int main() {
@@ -14,7 +14,7 @@ int main() {
   }
   ns.push_back(stoi(s));
 
-  map<int,int> hist;
+  unordered_map<int,int> hist;
   int i = 0;
   for (int n : ns) {
     hist[n] = i;
