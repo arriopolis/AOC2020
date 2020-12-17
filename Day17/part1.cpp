@@ -24,9 +24,6 @@ int main() {
   while (changed) {
     changed = false;
 
-    // cout << "Depth: " << d << endl;
-    // cout << "Height: " << h << endl;
-    // cout << "Width: " << w << endl;
     cout << "Iteration: " << iter << endl;
     for (int i = 0; i < d; i++) {
       cout << "z = " << i << endl;
@@ -60,10 +57,6 @@ int main() {
         if (grid[i][j][0]) ok = 1;
         if (grid[i][j][w-1]) ek = 1;
       }
-
-    // cout << "oi: " << oi << ", ei: " << ei << endl;
-    // cout << "oj: " << oj << ", ej: " << ej << endl;
-    // cout << "ok: " << ok << ", ek: " << ek << endl;
 
     int newd = d + oi + ei, newh = h + oj + ej, neww = w + ok + ek;
     bool *** newgrid = new bool**[newd];
