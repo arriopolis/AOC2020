@@ -245,6 +245,7 @@ int main() {
       // cout << "----------------------------" << endl;
 
       // Look for monsters
+      set<pair<int,int>> monster_squares;
       for (int y = 0; y < t; y++) {
         if (y + mh >= t) continue;
         for (int x = 0; x < t; x++) {
@@ -260,10 +261,9 @@ int main() {
           }
 
           if (success) {
-            // cout << "Found a monster at: " << y << ',' << x << endl;
             for (auto o : monster) {
               int dy = o.first, dx = o.second;
-              total_grid[y+dy][x+dx] = false;
+              monster_squares.insert({y+dy,x+dx});
             }
             stop = true;
           }
@@ -274,8 +274,14 @@ int main() {
         int ctr = 0;
         for (int y = 0; y < t; y++) {
           for (int x = 0; x < t; x++) {
-            if (total_grid[y][x]) ctr++;
+            if (monster_squares.find({y,x}) != monster_squares.end()) {
+              cout << "\033[1;31m#\033[0m";
+            } else {
+              cout << (total_grid[y][x] ? '#' : '.');
+              if (total_grid[y][x]) ctr++;
+            }
           }
+          cout << endl;
         }
         cout << ctr << endl;
         break;
