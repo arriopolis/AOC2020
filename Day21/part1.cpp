@@ -32,12 +32,12 @@ int main() {
     foods.push_back({ingredients, allergens});
   }
 
-  for (auto p : foods) {
-    for (string x : p.first) cout << x << ' ';
-    cout << "- ";
-    for (string x : p.second) cout << x << ' ';
-    cout << endl;
-  }
+  // for (auto p : foods) {
+  //   for (string x : p.first) cout << x << ' ';
+  //   cout << "- ";
+  //   for (string x : p.second) cout << x << ' ';
+  //   cout << endl;
+  // }
 
   set<string> allergens;
   set<string> ingredients;
@@ -88,9 +88,9 @@ int main() {
     allergens = new_allergens;
   }
 
-  for (auto i : used) {
-    cout << i << endl;
-  }
+  // for (auto i : used) {
+  //   cout << i << endl;
+  // }
 
   int ctr = 0;
   for (auto p : foods) {

@@ -33,12 +33,12 @@ int main() {
     foods.push_back({ingredients, allergens});
   }
 
-  for (auto p : foods) {
-    for (string x : p.first) cout << x << ' ';
-    cout << "- ";
-    for (string x : p.second) cout << x << ' ';
-    cout << endl;
-  }
+  // for (auto p : foods) {
+  //   for (string x : p.first) cout << x << ' ';
+  //   cout << "- ";
+  //   for (string x : p.second) cout << x << ' ';
+  //   cout << endl;
+  // }
 
   set<string> allergens;
   set<string> ingredients;
@@ -91,14 +91,14 @@ int main() {
     allergens = new_allergens;
   }
 
-  for (auto i : used) {
-    cout << i << endl;
-  }
+  // for (auto i : used) {
+  //   cout << i << endl;
+  // }
 
   sort(dict.begin(), dict.end());
 
-  for (auto i : dict) {
-    cout << i.substr(i.find('-')+1) << ',';
+  for (int i = 0; i < dict.size() - 1; i++) {
+    cout << dict[i].substr(dict[i].find('-')+1) << ',';
   }
-  cout << endl;
+  cout << dict[dict.size()-1].substr(dict[dict.size()-1].find('-')+1) << endl;
 }
